@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prosto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.header{
+    width: 100%;
+    color: white;
+    background-color: black;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header p{
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    padding-left: 800px;
+    font-family: 'Playfair Display', serif;
+
+}
+.header h1{
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    padding: 0;
+    font-size: 40px;
+    padding-left: 40px;
+}
+body{
+    background: 
+    linear-gradient(to bottom, transparent 15%, #000000 95%),
+    linear-gradient(to right, #000000 0%, #1a1a1a 15%, #1a1a1a 85%, #000000 100%);
+    background-color: #000000; 
+    min-height: 100vh;
+    margin: 0;
+}
+.bi.bi-basket2-fill{
+    padding-right: 50px;
+    font-size: 40px;
+}
+.content-on-main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+.content-on-main h1{
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+.content-on-main p{
+    font-size: 27px;
+    margin: 0;
+    padding: 0;
+    color: rgb(77, 75, 75);
+    font-family: 'Prosto One', cursive;
+}
+.filter {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    padding-top: 500px;
+}
+
+.filter a {
+    text-decoration: none;
+    color: #ccc;
+    font-family: 'Prosto One', cursive;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.filter a.active, .filter a:hover {
+    color: #d48344; 
+}
