@@ -75,3 +75,107 @@ body{
 .filter a.active, .filter a:hover {
     color: #d48344; 
 }
+.cards-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    padding:50px 80px 60px;
+}
+
+.card{
+    border:1px solid #333;
+    border-radius:10px;
+    padding:15px;
+    background:#111;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#ff8c42;
+}
+
+.photo-placeholder{
+    width:100%;
+    height:140px;
+    background:#ffffff;
+    font-family: prosto one, cursive;
+    font-size: 50px;
+    font-weight: bolder;
+    color:#444;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:6px;
+    margin-bottom:15px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.row h3{
+    font-family: 'Prosto One', cursive;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 0;
+    margin-right: 15px;
+    margin-top: 0;
+}
+
+.price{
+    color:#ff8c42;
+    font-weight:bold;
+    font-family: 'Prosto One', cursive;
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.description{
+    font-size:21px;
+    font-family: 'Prosto One', cursive;
+    color:#aaa;
+    margin-top: 0;
+    margin-bottom:15px;
+}
+
+.add-btn{
+    width:100%;
+    font-family: prosto one, cursive;
+    font-weight: bolder;
+    padding:10px;
+    font-size: 14px;
+    border:none;
+    border-radius:6px;
+    background:#ff8c42;
+    color:rgb(0, 0, 0);
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.add-btn:hover{
+    background:#ff7a20;
+}
+.footer{
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.footer-title{
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 86px;
+    margin: 0;
+}
+.footer-description{
+    font-family: 'Prosto One', cursive;
+    font-size: 16px;
+    color: rgb(77, 75, 75);
+    margin: 5px 0 0;
+}
