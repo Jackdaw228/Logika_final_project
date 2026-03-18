@@ -49,5 +49,55 @@
             <p class="footer-description">Мистецтво смаку в кожній деталі</p>
         </div>
     </footer>
+    <script src="cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let totalAmountEl = document.querySelector('.total-amount');
+            if (totalAmountEl && typeof getCartTotal === 'function') {
+                totalAmountEl.textContent = `${getCartTotal()} ₴`;
+            }
+
+            let confirmBtn = document.querySelector('.confirm-btn');
+            if (!confirmBtn) return;
+
+            let nameInput = document.querySelector('input[type="text"]');
+            let phoneInput = document.querySelector('input[type="tel"]');
+            let addressInput = document.querySelector('input[placeholder="Ваша адреса"]');
+
+            confirmBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                let name = nameInput?.value.trim();
+                let phone = phoneInput?.value.trim();
+                let address = addressInput?.value.trim();
+                let total = getCartTotal();
+
+                let phonePattern = /^\+380\s?\(?\d{2,3}\)?\s?\d{3}\s?\d{2}\s?\d{2}$/;
+
+                if (!name || !phone || !address) {
+                    showToast('Будь ласка, заповніть всі поля.');
+                    return;
+                }
+
+                if (!phonePattern.test(phone)) {
+                    showToast('Введіть коректний номер телефону у форматі +380 XX XXX XX XX.');
+                    return;
+                }
+
+                if (total <= 0) {
+                    showToast('Ваш кошик порожній. Додайте щось до замовлення.');
+                    return;
+                }
+
+                showToast('Дякуємо! Ваше замовлення успішно оформлено. Скоро зателефонуємо для підтвердження.');
+                localStorage.removeItem('cart');
+                updateCartBadge();
+
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 5000);
+            });
+        });
+    </script>
 </body>
 </html>
