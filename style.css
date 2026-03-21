@@ -1,0 +1,807 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prosto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.header{
+    width: 100%;
+    color: white;
+    background-color: black;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+}
+.header a{
+    margin: 0;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0;
+    font-size: 40px;
+    margin-left: 800px;
+    font-family: 'Playfair Display', serif;
+
+}
+.header h1{
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    padding: 0;
+    font-size: 40px;
+    padding-left: 40px;
+}
+.header a{
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    padding: 0;
+    font-size: 40px;
+    padding-left: 40px;
+}
+body{
+    background: 
+    linear-gradient(to bottom, transparent 15%, #000000 95%),
+    linear-gradient(to right, #000000 0%, #1a1a1a 15%, #1a1a1a 85%, #000000 100%);
+    background-color: #000000; 
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.bi.bi-basket2-fill{
+    padding-right: 50px;
+    font-size: 40px;
+    color: white;
+}
+.content-on-main{
+    position: relative;
+    top: 150px;
+    color: white;
+    text-align: center;
+}
+.content-on-main h1{
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+.content-on-main p{
+    font-size: 27px;
+    margin: 0;
+    padding: 0;
+    color: rgb(77, 75, 75);
+    font-family: 'Prosto One', cursive;
+}
+.filter {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    padding-top: 330px;
+}
+
+.filter a {
+    text-decoration: none;
+    color: #ccc;
+    font-family: 'Prosto One', cursive;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.filter a.active, .filter a:hover {
+    color: #d48344; 
+}
+.cards-container{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(250px, 1fr));
+    gap:30px;
+    column-gap: 30px;
+    padding:50px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card{
+    border:1px solid #333;
+    border-radius:10px;
+    padding:15px;
+    background:#111;
+    transition:0.3s;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.cart-list {
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.btn-outline, .btn-primary {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+#toast-root {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-notification {
+    padding: 12px 16px;
+    background: rgba(44, 44, 44, 0.96);
+    color: #fff;
+    border: 1px solid rgba(255, 140, 66, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    font-family: 'Prosto One', cursive;
+    font-size: 15px;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: all .25s ease;
+    max-width: 280px;
+}
+
+.toast-notification.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 900px) {
+    .cards-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+    .header {
+        max-width: 100%;
+        padding: 0 12px;
+        overflow: hidden;
+        justify-content: space-between;
+    }
+    .header h1 {
+        font-size: 20px;
+        padding-left: 0;
+        margin: 0;
+        flex: 0 0 auto;
+    }
+    .header > div {
+        margin-left: auto;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    .header a, .bi.bi-basket2-fill {
+        font-size: 20px;
+        padding: 4px 8px;
+        margin-left: 0;
+    }
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 14px 8px 28px;
+        gap: 10px;
+    }
+    .card {
+        width: auto;
+        max-width: 200px;
+        padding: 6px;
+    }
+    .row h3 {
+        font-size: 18px;
+    }
+    .price,
+    .item-price-unit,
+    .item-total-price {
+        font-size: 16px;
+    }
+    .description {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .add-btn {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .cart-item {
+        padding: 10px;
+    }
+    .item-img-placeholder {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+    .quantity-picker {
+        gap: 8px;
+    }
+    .quantity-picker button {
+        font-size: 16px;
+        padding: 4px 6px;
+    }
+    .cart-item { width: 90%; }
+}
+
+@media (max-width: 480px) {
+    .cards-container {
+        max-width: 340px;
+        padding: 16px 10px 30px;
+    }
+    .card {
+        max-width: 280px;
+    }
+}
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#ff8c42;
+}
+
+.photo-placeholder{
+    width:100%;
+    height:140px;
+    background:#ffffff;
+    font-family: prosto one, cursive;
+    font-size: 50px;
+    font-weight: bolder;
+    color:#444;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:6px;
+    margin-bottom:15px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.row h3{
+    font-family: 'Prosto One', cursive;
+    font-weight: bolder;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 0;
+    margin-right: 15px;
+    margin-top: 0;
+}
+
+.price{
+    color:#ff8c42;
+    font-weight:bold;
+    font-family: 'Prosto One', cursive;
+    font-size: 28px;
+    white-space: nowrap;
+}
+
+.description{
+    font-size:22px;
+    font-family: 'Prosto One', cursive;
+    color:#aaa;
+    margin-top: 0;
+    margin-bottom:15px;
+}
+
+.add-btn{
+    width:100%;
+    font-family: prosto one, cursive;
+    font-weight: bolder;
+    padding:10px;
+    font-size: 14px;
+    border:none;
+    border-radius:6px;
+    background:#ff8c42;
+    color:rgb(0, 0, 0);
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.add-btn:hover{
+    background:#ff7a20;
+}
+.footer{
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+.footer-title{
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 86px;
+    margin: 0;
+}
+.footer-description{
+    font-family: 'Prosto One', cursive;
+    font-size: 16px;
+    color: rgb(77, 75, 75);
+    margin: 5px 0 0;
+}
+.content-on-basket{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+.content-on-basket h1{
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    font-family: 'prosto one', serif;
+}
+.content-on-basket a{
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    margin-top: 0;
+    font-family: 'prosto one', serif;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.content-on-basket a:hover {
+    transform: scale(1.2);
+    color: #5f5f5f;
+}
+.h1-on-last{
+    padding-top: 30px;
+    color: white;
+    text-align: center;
+    font-family: playfair display, serif;
+    font-weight: regular;
+    font-size: 40px;
+}
+.order-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tabs {
+    display: flex;
+    background-color: #000;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 25px;
+}
+
+.tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-family: prosto one, cursive;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.tab.active {
+    background-color: #a66333;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-family: prosto one, cursive;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #777;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+input, select {
+    width: 100%;
+    background-color: #262626;
+    border: 1px solid #3d3d3d;
+    font-family: prosto one, cursive;
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.confirm-btn {
+    display: flex;
+    background-color: #a66333;
+    color: white;
+    border: none;
+    margin: 20px 0 0 0;
+    align-items: center;
+    justify-content: center;
+    font-family: prosto one, cursive;
+    font-size: xx-large;
+    padding: 50px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #8e522a;
+}
+
+.address.important {
+    color: #ff8c42;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px; 
+    margin-bottom: 40px; 
+    text-decoration: none;
+    color: #666; 
+    font-family: 'Prosto One', cursive;
+    font-size: large;
+    transition: color 0.3s ease;
+    width: 100%; 
+    text-align: center;
+}
+
+.back-link:hover {
+    color: #ff8c42; 
+}
+
+.page-title {
+    text-align: center;
+    color: white;
+    font-family: prosto one, cursive;
+    font-size: 40px;
+    margin-top: 30px;
+}
+.cart-item {
+    width: 100%;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 20px 40px;
+    border-bottom: 0.5px solid #333;
+    max-width: 760px;
+    padding: 15px;
+}
+
+.item-info { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.item-img-placeholder {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    color: #000;
+    display: flex;
+    font-family: prosto one, cursive;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.item-name { 
+    font-size: 18px; 
+    margin-bottom: 5px; 
+    font-family: 'Prosto One', cursive;
+    font-weight: 600;
+    color: white;
+}
+.item-price-unit { 
+    color: #ff8c42;
+    font-family: prosto one, cursive;
+    font-size: 14px; 
+}
+
+.item-controls { display: flex; align-items: center; gap: 40px; }
+
+.quantity-picker {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: prosto one, cursive;
+    gap: 15px;
+}
+.quantity-picker button {
+    background: none; 
+    border: none; 
+    font-family: prosto one, cursive;
+    color: rgb(0, 0, 0); 
+    cursor: pointer; 
+    font-size: 18px;
+}
+
+.item-total-price { 
+    width: 80px; 
+    text-align: right; 
+    font-weight: 600; 
+    font-family: prosto one, cursive;
+    color: #ff8c42;
+}
+
+.remove-btn { 
+    background: none; 
+    border: none; 
+    color: #555; 
+    cursor: pointer; 
+    font-size: 20px; 
+    transition: 0.3s; 
+    font-family: prosto one, cursive;
+}
+
+.remove-btn:hover { color: white; }
+
+.empty-msg {
+    text-align: center;
+    color: #8e5a34;
+    font-family: prosto one, cursive;
+
+}
+
+.total-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    border: 1px solid #555;
+    border-radius: 15px;
+    padding: 25px 40px;
+    background: #111;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.total-section span {
+    font-size: 20px;
+    color: white;
+    font-family: prosto one, cursive;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.total-amount { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 32px;
+    color: #ff8c42;
+    font-weight: 900;
+    min-width: 130px;
+    text-align: right;
+}
+
+.cart-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.btn-outline {
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: prosto one, cursive;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    padding: 18px;
+    border: none;
+    color : white;
+    font-family: prosto one, cursive;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #8e5a34;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background-color: #a66333; }
+.btn-outline:hover { background: white; color: black; }
+
+/* Mobile-first adaptation for narrow screens */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .header h1 {
+        font-size: 28px;
+        padding-left: 0;
+        margin-bottom: 8px;
+    }
+
+    .header > div {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .header a, .bi.bi-basket2-fill {
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-on-main {
+        top: 110px;
+        padding: 0 16px;
+    }
+
+    .content-on-main h1 { font-size: 46px; }
+    .content-on-main p { font-size: 20px; }
+
+    .filter {
+        padding-top: 200px;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter a { font-size: 0.85rem; }
+
+    .cards-container {
+        padding: 20px 12px 40px;
+        max-width: 100%;
+    }
+
+    .card {
+        max-width: none;
+        padding: 14px;
+        width: 80%;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+        width: 80%;
+    }
+
+    .item-info {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .order-card {
+        width: 80%;
+        padding: 16px;
+    }
+
+    .confirm-btn {
+        font-size: 1.3rem;
+        padding: 18px;
+    }
+
+    .total-section {
+        padding: 18px;
+        width: 80%;
+    }
+
+    .page-title, .h1-on-last {
+        font-size: 30px;
+    }
+
+    .back-link {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    body {
+        background: linear-gradient(to bottom, transparent 15%, #000000 95%), linear-gradient(to right, #000000 0%, #1a1a1a 20%, #1a1a1a 80%, #000000 100%);
+    }
+
+    .header {
+        max-width: 100%;
+        padding: 0 8px;
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header h1 {
+        font-size: 20px;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .header a, .bi.bi-basket2-fill {
+        font-size: 20px;
+        padding: 4px 8px;
+        margin-left: 0;
+    }
+
+    .content-on-main {
+        top: 100px;
+    }
+
+    .content-on-main h1 { font-size: 38px; }
+    .content-on-main p { font-size: 16px; }
+
+    .filter {
+        padding-top: 150px;
+        gap: 10px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 18px 10px 40px;
+    }
+
+    .input-group {
+        margin-bottom: 12px;
+    }
+
+    .input-group label {
+        font-size: 0.65rem;
+    }
+
+    input, select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .confirm-btn {
+        font-size: 1.2rem;
+        padding: 14px;
+    }
+
+    .total-amount { font-size: 26px; min-width: auto; }
+    .total-section span { font-size: 18px; }
+
+    .cart-actions {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .page-title, .h1-on-last { font-size: 28px; }
+}
