@@ -104,7 +104,7 @@ function renderBasket() {
         return `
             <div class="cart-item">
                 <div class="item-info">
-                    <div class="item-img-placeholder">Photo</div>
+                    <div class="item-img-placeholder">${item.image ? `<img src="${item.image}" alt="${item.name}" class="item-image">` : 'Фото'}</div>
                     <div class="item-details">
                         <div class="item-name">${item.name}</div>
                         <div class="item-price-unit">${itemPrice} ₴</div>
