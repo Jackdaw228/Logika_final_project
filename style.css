@@ -90,6 +90,7 @@ body{
     display:grid;
     grid-template-columns:repeat(3,minmax(250px, 1fr));
     gap:30px;
+    column-gap: 30px;
     padding:50px 20px 60px;
     max-width: 1200px;
     margin: 0 auto;
@@ -154,8 +155,84 @@ body{
 }
 
 @media (max-width: 620px) {
-    .cards-container { grid-template-columns: repeat(1, 1fr); }
+    .header {
+        max-width: 100%;
+        padding: 0 12px;
+        overflow: hidden;
+        justify-content: space-between;
+    }
+    .header h1 {
+        font-size: 20px;
+        padding-left: 0;
+        margin: 0;
+        flex: 0 0 auto;
+    }
+    .header > div {
+        margin-left: auto;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    .header a, .bi.bi-basket2-fill {
+        font-size: 20px;
+        padding: 4px 8px;
+        margin-left: 0;
+    }
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 14px 8px 28px;
+        gap: 10px;
+    }
+    .card {
+        width: auto;
+        max-width: 200px;
+        padding: 6px;
+    }
+    .row h3 {
+        font-size: 18px;
+    }
+    .price,
+    .item-price-unit,
+    .item-total-price {
+        font-size: 16px;
+    }
+    .description {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .add-btn {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .cart-item {
+        padding: 10px;
+    }
+    .item-img-placeholder {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+    .quantity-picker {
+        gap: 8px;
+    }
+    .quantity-picker button {
+        font-size: 16px;
+        padding: 4px 6px;
+    }
     .cart-item { width: 90%; }
+}
+
+@media (max-width: 480px) {
+    .cards-container {
+        max-width: 340px;
+        padding: 16px 10px 30px;
+    }
+    .card {
+        max-width: 280px;
+    }
 }
 .card:hover{
     transform:translateY(-5px);
@@ -561,3 +638,170 @@ input, select {
 
 .btn-primary:hover { background-color: #a66333; }
 .btn-outline:hover { background: white; color: black; }
+
+/* Mobile-first adaptation for narrow screens */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .header h1 {
+        font-size: 28px;
+        padding-left: 0;
+        margin-bottom: 8px;
+    }
+
+    .header > div {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .header a, .bi.bi-basket2-fill {
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-on-main {
+        top: 110px;
+        padding: 0 16px;
+    }
+
+    .content-on-main h1 { font-size: 46px; }
+    .content-on-main p { font-size: 20px; }
+
+    .filter {
+        padding-top: 200px;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter a { font-size: 0.85rem; }
+
+    .cards-container {
+        padding: 20px 12px 40px;
+        max-width: 100%;
+    }
+
+    .card {
+        max-width: none;
+        padding: 14px;
+        width: 80%;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+        width: 80%;
+    }
+
+    .item-info {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .order-card {
+        width: 80%;
+        padding: 16px;
+    }
+
+    .confirm-btn {
+        font-size: 1.3rem;
+        padding: 18px;
+    }
+
+    .total-section {
+        padding: 18px;
+        width: 80%;
+    }
+
+    .page-title, .h1-on-last {
+        font-size: 30px;
+    }
+
+    .back-link {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    body {
+        background: linear-gradient(to bottom, transparent 15%, #000000 95%), linear-gradient(to right, #000000 0%, #1a1a1a 20%, #1a1a1a 80%, #000000 100%);
+    }
+
+    .header {
+        max-width: 100%;
+        padding: 0 8px;
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header h1 {
+        font-size: 20px;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .header a, .bi.bi-basket2-fill {
+        font-size: 20px;
+        padding: 4px 8px;
+        margin-left: 0;
+    }
+
+    .content-on-main {
+        top: 100px;
+    }
+
+    .content-on-main h1 { font-size: 38px; }
+    .content-on-main p { font-size: 16px; }
+
+    .filter {
+        padding-top: 150px;
+        gap: 10px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 18px 10px 40px;
+    }
+
+    .input-group {
+        margin-bottom: 12px;
+    }
+
+    .input-group label {
+        font-size: 0.65rem;
+    }
+
+    input, select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .confirm-btn {
+        font-size: 1.2rem;
+        padding: 14px;
+    }
+
+    .total-amount { font-size: 26px; min-width: auto; }
+    .total-section span { font-size: 18px; }
+
+    .cart-actions {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .page-title, .h1-on-last { font-size: 28px; }
+}
