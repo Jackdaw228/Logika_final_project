@@ -3,36 +3,42 @@
         "name": "Рибай Стейк Dry-Aged",
         "price": "1200 ₴",
         "description": "45 днів витримки, морська сіль, розмарин.",
-        "category": "Стейки"
+        "category": "Стейки",
+        "image": "https://myastoriya.com.ua/upload/iblock/a86/fr60j5qxqdgj032kaz0fnefl2ormj0fz.jpg"
     },
     {
         "name": "Філе-міньйон з трюфелем",
         "price": "1400 ₴",
         "description": "Ніжне м'ясо з соусом на основі чорного трюфеля.",
-        "category": "Стейки"
+        "category": "Стейки",
+        "image": "https://shuba.life/static/content/thumbs/1824x912/7/32/rjvvjy---c2x1x50px50p-up--17182ae0ddcb58736dd35d0da3e65327.jpg"
     },
     {
         "name": "Чорна тріска Miso",
         "price": "980 ₴",
         "description": "Маринована в місо-пасті, подається з бок-чой.",
-        "category": "Морепродукти"
+        "category": "Морепродукти",
+        "image": "https://www.cooksgazette.com/wp-content/uploads/2020/03/1.Black-Cod-690x505.jpg?x61474"
     },
     {
         "name": "Восьминіг на грилі",
         "price": "1150 ₴",
         "description": "З пюре із нуту та соусом пірі-пірі.",
-        "category": "Морепродукти"
+        "category": "Морепродукти",
+        "image": "https://www.tablycjakalorijnosti.com.ua/file/image/foodstuff/927bacedb4ac3123/820703e5a907418a9b4770097d946dd4"
     },
     {
         "name": "Шоколадний Фондан",
         "price": "320 ₴",
         "description": "З кулькою ванільного морозива та фундуком.",
-        "category": "Десерти"
+        "category": "Десерти",
+        "image": "https://ffa.com.ua/files/blog/single_chocolate_fondant.png"
     },
     {
         "name": "Chateau Margaux 2015",
         "price": "8500 ₴",
         "description": "Класика Бордо для справжніх поціновувачів.",
-        "category": "Вина"
+        "category": "Вина",
+        "image": "https://www.closdesmillesimes.com/client/cache/produit/_800______topcenter_capture-d---ecran-2018-06-05-a-180225_3873.jpg"
     }
 ]

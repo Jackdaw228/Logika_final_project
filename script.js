@@ -13,7 +13,7 @@ function renderMenu(items) {
         let card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-            <div class="photo-placeholder">Photo</div>
+            ${item.image ? `<img src="${item.image}" alt="${item.name}" class="card-image">` : ''}
             <div class="card-info">
                 <div class="row">
                     <h3>${item.name}</h3>
